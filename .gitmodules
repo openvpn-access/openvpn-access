@@ -1,0 +1,12 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/openvpn-access/backend
+[submodule "dashboard"]
+	path = dashboard
+	url = https://github.com/openvpn-access/dashboard.git
+[submodule "authenticator"]
+	path = authenticator
+	url = https://github.com/openvpn-access/authenticator.git
+[submodule "openvpn-docker"]
+	path = openvpn-docker
+	url = https://github.com/openvpn-access/openvpn-docker.git
