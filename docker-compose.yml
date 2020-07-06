@@ -1,0 +1,31 @@
+version: '3.3'
+services: 
+    db:
+        image: mariadb:latest
+        restart: always
+        ports: 
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: openvpn-access
+        volumes:
+            - db-volume:/var/lib/mysql
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+    backend:
+        build: ./backend
+        ports:
+            - 3000:8080
+        environment: 
+            MYSQL_ROOT_PASSWORD: openvpn-access
+        volumes:
+            - app-volume:/opt/app
+    openvpn:
+        build: ./openvpn-docker
+networks:
+    development-network:
+volumes:
+    db-volume:
+    app-volume:
