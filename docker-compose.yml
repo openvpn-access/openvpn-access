@@ -27,3 +27,18 @@ services:
             driver: json-file
     openvpn:
         build: ./openvpn-docker
+        ports:
+            - 1194:1194/udp
+        volumes:
+            - openvpn_pki:/etc/openvpn/pki
+        cap_add:
+            - NET_ADMIN
+        environment:
+            REQ_COUNTRY: US
+            REQ_PROVINCE: California
+            REQ_CITY: San Francisco
+            REQ_ORG: Copyleft Certificate Co
+            REQ_OU: My Organizational Unit
+            REQ_CN: OpenVPN-Access
+volumes:
+    openvpn_pki:
