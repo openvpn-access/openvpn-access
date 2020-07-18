@@ -10,3 +10,6 @@
 [submodule "openvpn-docker"]
 	path = openvpn-docker
 	url = https://github.com/openvpn-access/openvpn-docker.git
+[submodule "certificate-server"]
+	path = certificate-server
+	url = https://github.com/openvpn-access/certificate-server.git
