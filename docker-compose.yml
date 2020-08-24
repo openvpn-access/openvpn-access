@@ -25,7 +25,7 @@ services:
         ports:
             - 1194:1194/udp
         volumes:
-            - ./local/openvpn_pki:/etc/openvpn/pki
+            - ./local/openvpn_pki:/etc/openvpn/pki:z
         cap_add:
             - NET_ADMIN
         environment:
