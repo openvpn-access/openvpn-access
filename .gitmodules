@@ -13,3 +13,6 @@
 [submodule "certificate-server"]
 	path = certificate-server
 	url = https://github.com/openvpn-access/certificate-server.git
+[submodule "nginx"]
+	path = nginx
+	url = https://github.com/openvpn-access/nginx.git
