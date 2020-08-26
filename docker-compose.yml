@@ -35,3 +35,12 @@ services:
             REQ_ORG: Copyleft Certificate Co
             REQ_OU: My Organizational Unit
             REQ_CN: OpenVPN-Access
+    certificate-server:
+        build: 
+            context: ./certificate-server
+            dockerfile: ./docker/Dockerfile
+        ports:
+            - 5000:5000
+        volumes:
+            - ./local/openvpn_pki:/openvpn_pki:z
+            - ./config:/config:z
