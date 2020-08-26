@@ -12,12 +12,19 @@ services:
             MYSQL_DATABASE: openvpn_access
             MYSQL_USER: openvpn-access
             MYSQL_PASSWORD: openvpn-access
+    dashboard:
+        build:
+            context: ./dashboard
+            dockerfile: ./docker/Dockerfile
+        volumes:
+            - ./config:/config:z
+            - ./static:/static:z
     backend:
         build: 
             context: ./backend
             dockerfile: ./docker/Dockerfile
         ports:
-            - 3000:8080
+            - 8080:8080
         environment: 
             MYSQL_PASSWORD: openvpn-access
             DATABASE_URL: mysql://openvpn-access:openvpn-access@db:3306/openvpn_access?schema=public
