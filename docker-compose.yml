@@ -5,6 +5,8 @@ services:
         restart: always
         ports: 
             - 3306:3306
+        volumes:
+            - ./local/db:/var/lib/mysql:z
         environment:
             MYSQL_ROOT_PASSWORD: openvpn-access
             MYSQL_DATABASE: openvpn_access
@@ -25,7 +27,7 @@ services:
         ports:
             - 1194:1194/udp
         volumes:
-            - ./local/openvpn_pki:/etc/openvpn/pki:z
+            - ./local/pki:/etc/openvpn/pki:z
         cap_add:
             - NET_ADMIN
         environment:
@@ -42,5 +44,5 @@ services:
         ports:
             - 5000:5000
         volumes:
-            - ./local/openvpn_pki:/openvpn_pki:z
+            - ./local/pki:/openvpn_pki:z
             - ./config:/config:z

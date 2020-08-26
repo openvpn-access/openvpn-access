@@ -1,5 +1,8 @@
 .DS_Store
 .vscode
-local/openvpn_pki/*
+local/pki/*
+!local/pki/keep
+local/db/*
+!local/db/keep
 config/*
 !config/keep
