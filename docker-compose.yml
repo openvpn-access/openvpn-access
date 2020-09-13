@@ -39,14 +39,15 @@ services:
             - 1194:1194/udp
         volumes:
             - ./local/pki:/etc/openvpn/pki:z
+            - ./config:/config:z
         cap_add:
             - NET_ADMIN
         environment:
-            REQ_COUNTRY: US
-            REQ_PROVINCE: California
-            REQ_CITY: San Francisco
-            REQ_ORG: Copyleft Certificate Co
-            REQ_OU: My Organizational Unit
+            REQ_COUNTRY: DE
+            REQ_PROVINCE: Hessen
+            REQ_CITY: Frankfurt
+            REQ_ORG: OpenVPN Access
+            REQ_OU: VPN Operations
             REQ_CN: OpenVPN-Access
     certificate-server:
         build: 
